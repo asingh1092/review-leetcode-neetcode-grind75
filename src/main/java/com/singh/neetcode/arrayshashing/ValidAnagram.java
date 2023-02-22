@@ -1,5 +1,7 @@
 package com.singh.neetcode.arrayshashing;
 
+import java.util.Arrays;
+
 public class ValidAnagram {
 
     /*
@@ -10,11 +12,48 @@ public class ValidAnagram {
 
        Base case -> same length
        1. String -> char arrays -> sort -> iterate over
-       2. int[256]
+       2. int[26]
 
      */
     public boolean isAnagram(String s, String t) {
-        Integer.valueOf('c');
-        return false;
+        int s_length = s.length();
+        int t_length = t.length();
+        if (s_length != t_length) {
+            return false;
+        }
+
+        int[] map = new int[26];
+
+        for (int i = 0; i <= s_length - 1; i++) {
+            map[s.charAt(i) - 'a']++;
+            map[t.charAt(i) - 'a']--;
+        }
+
+        for (int n : map) {
+            if (n != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAnagramCollectionsSort(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        char[] s_array = s.toCharArray();
+        char[] t_array = t.toCharArray();
+        Arrays.sort(s_array);
+        Arrays.sort(t_array);
+        for (int i = 0; i <= s.length() - 1; i++) {
+            if (s_array[i] != t_array[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isAnagramCollectionsSort("a", "b"));
     }
 }
