@@ -1,4 +1,4 @@
-package com.singh.neetcode.arrayshashing;
+package com.singh.neetcode.arrayshashing.easy;
 
 import java.util.HashSet;
 import java.util.Set;
