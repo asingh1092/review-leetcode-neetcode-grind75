@@ -53,7 +53,34 @@ public class ValidAnagram {
         return true;
     }
 
+
+
+
+
+
+
     public static void main(String[] args) {
         System.out.println(isAnagramCollectionsSort("a", "b"));
+    }
+
+    public static boolean isValidAnagramP2(String first, String second) {
+        int firstLength = first.length();
+        int secondLength = second.length();
+        if (firstLength != secondLength) {
+            return false;
+        }
+        int[] map = new int[26];
+
+        for (int i = 0; i <= firstLength - 1; i++) {
+            map[first.charAt(i) - 'a']++;
+            map[second.charAt(i) - 'a']--;
+        }
+
+        for (int value : map) {
+            if (value != 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
