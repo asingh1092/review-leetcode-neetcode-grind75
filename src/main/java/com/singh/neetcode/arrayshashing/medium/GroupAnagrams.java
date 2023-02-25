@@ -49,7 +49,7 @@ public class GroupAnagrams {
             for (char ch : chStr) {
                 count[ch - 'a']++;
             }
-            String key = Arrays.toString(count);
+            String key = Arrays.toString(count); // meat
             if (!hMap.containsKey(key)) {
                 hMap.put(key, new ArrayList<>());
             }

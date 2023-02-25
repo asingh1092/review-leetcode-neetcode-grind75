@@ -46,9 +46,38 @@ public class TopKFrequentElements {
         return ret;
     }
 
+
+    /*
+       [1, 1, 1 , 2, 2, 3] k = 2
+
+       max heap -> always keep max value up top
+
+
+
+     */
+    public static int[] KthFrequentElements(int[] nums, int k) {
+        Queue<Map.Entry<Integer, Integer>> priority = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue()); // max heap
+        Map<Integer, Integer> hashMap = new HashMap<>(); // frequency map
+        for (int num : nums) {
+            if (!hashMap.containsKey(num)) {
+                hashMap.put(num, 1);
+            }
+            hashMap.put(num, hashMap.get(num) + 1);
+        }
+
+        priority.addAll(hashMap.entrySet());
+
+        int[] ret = new int[k];
+        for (int i = 0; i< k; i++) {
+            ret[i] = priority.poll().getKey();
+        }
+        return ret;
+    }
+
     public static void main(String[] args) {
         System.out.println(kFrequentElements(new int[]{1,1,1,2,2,3}, 2));
         System.out.println(kFrequentElements(new int[]{}, 1));
         System.out.println(kFrequentElements(new int[]{1}, 1));
+        Map<Integer, Integer> hMap = new HashMap<>();
     }
 }
