@@ -56,13 +56,13 @@ public class TopKFrequentElements {
 
      */
     public static int[] KthFrequentElements(int[] nums, int k) {
+        if (nums.length == 0) {
+            return new int[]{};
+        }
         Queue<Map.Entry<Integer, Integer>> priority = new PriorityQueue<>((a, b) -> b.getValue() - a.getValue()); // max heap
         Map<Integer, Integer> hashMap = new HashMap<>(); // frequency map
         for (int num : nums) {
-            if (!hashMap.containsKey(num)) {
-                hashMap.put(num, 1);
-            }
-            hashMap.put(num, hashMap.get(num) + 1);
+            hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
         }
 
         priority.addAll(hashMap.entrySet());
@@ -74,10 +74,18 @@ public class TopKFrequentElements {
         return ret;
     }
 
+
+    // TODO Solution with bucket sort
+
+
     public static void main(String[] args) {
-        System.out.println(kFrequentElements(new int[]{1,1,1,2,2,3}, 2));
-        System.out.println(kFrequentElements(new int[]{}, 1));
-        System.out.println(kFrequentElements(new int[]{1}, 1));
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{1, 1, 1, 2, 2, 3}, 2)));
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{}, 1)));
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{1}, 1)));
+
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{1, 1, 1, 2, 2, 3}, 2)));
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{}, 1)));
+        System.out.println(Arrays.toString(KthFrequentElements(new int[]{1}, 1)));
         Map<Integer, Integer> hMap = new HashMap<>();
     }
 }
