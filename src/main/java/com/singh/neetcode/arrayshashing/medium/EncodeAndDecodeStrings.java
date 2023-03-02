@@ -26,7 +26,6 @@ public class EncodeAndDecodeStrings {
             if (encodedString.charAt(i) == ':' && encodedString.charAt(i + 1) == ';') {
                 ret.add(sb.toString());
                 sb = new StringBuilder();
-                i++;
             } else {
                 sb.append(encodedString.charAt(i));
             }
@@ -39,5 +38,8 @@ public class EncodeAndDecodeStrings {
         EncodeAndDecodeStrings ed = new EncodeAndDecodeStrings();
         System.out.println(ed.encode(List.of("lint", "code", "love", "you")));
         System.out.println(ed.decode(ed.encode(List.of("lint", "code", "love", "you"))));
+
+        System.out.println(ed.encode(List.of("we", "say", ":", "yes")));
+        System.out.println(ed.decode(ed.encode(List.of("we", "say", ":", ";"))));
     }
 }
