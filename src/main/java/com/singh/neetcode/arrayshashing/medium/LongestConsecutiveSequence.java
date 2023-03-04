@@ -1,7 +1,6 @@
 package com.singh.neetcode.arrayshashing.medium;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class LongestConsecutiveSequence {
 
@@ -35,8 +34,27 @@ public class LongestConsecutiveSequence {
         return lcs;
     }
 
+    public int lcsp2(int[] nums) {
+        int ret = 0;
+        Set<Integer> hset = new HashSet<>();
+        for (int n : nums) {
+            hset.add(n);
+        }
+        for (int x : hset) {
+            if (!hset.contains(x - 1)) {
+                int y = x + 1;
+                while (hset.contains(y)) {
+                    y += 1;
+                }
+                ret = Math.max(ret, y - x);
+            }
+        }
+        return ret;
+    }
+
     public static void main(String[] args) {
         LongestConsecutiveSequence lcs = new LongestConsecutiveSequence();
-        System.out.println(lcs.lcs(new int[]{100,4,200,1,3,2}));
+        System.out.println(lcs.lcsp2(new int[]{100,4,200,1,3,2}));
+        System.out.println(lcs.lcsp2(new int[]{0,3,7,2,5,8,4,6,0,1}));
     }
 }
