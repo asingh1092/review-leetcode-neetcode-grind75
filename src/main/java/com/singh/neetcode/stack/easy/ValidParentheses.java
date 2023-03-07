@@ -1,4 +1,4 @@
-package com.singh.neetcode.stack;
+package com.singh.neetcode.stack.easy;
 
 import java.util.HashMap;
 import java.util.Map;

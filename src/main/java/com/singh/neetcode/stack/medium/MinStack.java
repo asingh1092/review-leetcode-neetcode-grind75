@@ -1,4 +1,4 @@
-package com.singh.neetcode.stack;
+package com.singh.neetcode.stack.medium;
 
 import java.util.EmptyStackException;
 
