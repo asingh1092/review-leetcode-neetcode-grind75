@@ -1,5 +1,8 @@
 package com.singh.neetcode.stack.medium;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 public class DailyTemperatures {
 
     /*
@@ -9,12 +12,30 @@ public class DailyTemperatures {
         If there is no future day for which this is possible, keep answer[i] == 0 instead.
 
         Ex 1. temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
+                             [ 1,  1,  4,  2,  1,  1,  0,  0]
 
-                              [1, 1, 4, 2, 1, 1, 0, 0]
                               80, 79, 78 , 76, 75, 74, 73 ]   Time: O(n) < O(n(n-1)*(n - 2)*...*O(n - n + 1)) < O(n^2)
                                                               Space: O(1)
 
-          // TODO
-
+          // TODO - use a monotonic stack
      */
+
+    public int[] dailyTemperatures(int[] temperatures) {
+        int size = temperatures.length;
+        int[] ret = new int[size];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < size; i++) {
+            while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                int idx = stack.pop();
+                ret[idx] = i - idx;
+            }
+            stack.push(i);
+        }
+        return ret;
+    }
+
+    public static void main(String[] args) {
+        DailyTemperatures dt = new DailyTemperatures();
+        System.out.println(Arrays.toString(dt.dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73})));
+    }
 }
