@@ -31,7 +31,11 @@ public class BinaryTree {
             postOrderSb.append(node.val);
         }
     }
-
+            /*
+                                1
+                           2        3
+                         4   5    6   7
+         */
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.root = new TreeNode(1,
@@ -44,15 +48,15 @@ public class BinaryTree {
                  )
         );
         /*
-                                1
-                           2        3
-                         4   5    6   7
+                                1                      5
+                           2        3      ->       3
+                         4   5    6   7           1   4
          */
         bt.inOrderTraversal(bt.root);
-        System.out.println(bt.inOrderSb.toString());
+        System.out.println("In Order: " + bt.inOrderSb.toString());
         bt.preOrderTraversal(bt.root);
-        System.out.println(bt.preOrderSb.toString());
+        System.out.println("Pre Order: " + bt.preOrderSb.toString());
         bt.postOrderTraversal(bt.root);
-        System.out.println(bt.postOrderSb.toString());
+        System.out.println("Post Order: " + bt.postOrderSb.toString());
     }
 }
