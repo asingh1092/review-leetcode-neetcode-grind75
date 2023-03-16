@@ -1,4 +1,4 @@
-package com.singh.neetcode.linkedlist;
+package com.singh.neetcode.linkedlist.easy;
 
 import com.singh.testing.linkedlist.ListNode;
 
@@ -8,7 +8,7 @@ public class MergeTwoSortedLists {
         ListNode merged = new ListNode();
         ListNode dummy = merged;
         while (list1 != null && list2 != null) {
-            if (list1.value < list2.value) {
+            if (list1.val < list2.val) {
 //                merged.next = new ListNode(list1.value); // dont need to be new list nodes
                 merged.next = list1;
                 list1 = list1.next;

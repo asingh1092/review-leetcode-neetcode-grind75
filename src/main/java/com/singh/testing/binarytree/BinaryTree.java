@@ -11,14 +11,14 @@ public class BinaryTree {
     public void inOrderTraversal(TreeNode node) {
         if (node != null) {
             inOrderTraversal(node.left);
-            inOrderSb.append(node.value);
+            inOrderSb.append(node.val);
             inOrderTraversal(node.right);
         }
     }
 
     public void preOrderTraversal(TreeNode node) {
         if (node != null) {
-            preOrderSb.append(node.value);
+            preOrderSb.append(node.val);
             preOrderTraversal(node.left);
             preOrderTraversal(node.right);
         }
@@ -28,7 +28,7 @@ public class BinaryTree {
         if (node != null) {
             postOrderTraversal(node.left);
             postOrderTraversal(node.right);
-            postOrderSb.append(node.value);
+            postOrderSb.append(node.val);
         }
     }
 

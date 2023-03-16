@@ -2,25 +2,25 @@ package com.singh.testing.linkedlist;
 
 public class ListNode {
 
-    public int value;
+    public int val;
     public ListNode next;
 
     public ListNode() {
     }
 
     public ListNode(int value) {
-        this.value = value;
+        this.val = value;
     }
 
     public ListNode(int value, ListNode next) {
-        this.value = value;
+        this.val = value;
         this.next = next;
     }
 
     @Override
     public String toString() {
         return "ListNode{" +
-                "value=" + value +
+                "value=" + val +
                 ", next=" + next +
                 '}';
     }

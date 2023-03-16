@@ -1,4 +1,4 @@
-package com.singh.neetcode.linkedlist;
+package com.singh.neetcode.linkedlist.medium;
 
 import com.singh.testing.linkedlist.ListNode;
 
