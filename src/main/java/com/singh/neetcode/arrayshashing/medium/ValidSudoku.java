@@ -16,7 +16,7 @@ public class ValidSudoku {
         Note: Don't worry about it being solvable. Only the filled cells need to be validated according to the mentioned rules
      */
 
-    public static boolean isValidSudoku(char[][] board) {
+    public static boolean isValidSudokuWRONG(char[][] board) {
         // create hashsets for each case.
         Set<Integer> setRows = new HashSet<>();
         Map<Integer, Set<Integer>> setCols = new HashMap<>();
@@ -70,6 +70,21 @@ public class ValidSudoku {
         return true;
     }
 
+    public static boolean isValidSudoku(char[][] board) {
+        Set<String> seen = new HashSet<>();
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                char number = board[i][j];
+                if (number != '.')
+                    if (!seen.add(number + " in row " + i) ||
+                            !seen.add(number + " in column " + j) ||
+                            !seen.add(number + " in block " + i / 3 + "-" + j / 3))
+                        return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         char[][] board = new char[][]{{'5', '3', '.', '.', '7', '.', '.', '.', '.'}
                 , {'6', '.', '.', '1', '9', '5', '.', '.', '.'}
@@ -94,16 +109,16 @@ public class ValidSudoku {
          */
         System.out.println(isValidSudoku(board));
         System.out.println(isValidSudoku(new char[][]
-                {{'.','.','4','.','.','.','6','3','.'}
-                ,{'.','.','.','.','.','.','.','.','.'}
-                ,{'5','.','.','.','.','.','.','9','.'}
-                ,{'.','.','.','5','6','.','.','.','.'}
-                ,{'4','.','3','.','.','.','.','.','1'}
-                ,{'.','.','.','7','.','.','.','.','.'}
-                ,{'.','.','.','5','.','.','.','.','.'}
-                ,{'.','.','.','.','.','.','.','.','.'}
-                ,{'.','.','.','.','.','.','.','.','.'}}));
-        System.out.println(3/3);
+                {{'.', '.', '4', '.', '.', '.', '6', '3', '.'}
+                        , {'.', '.', '.', '.', '.', '.', '.', '.', '.'}
+                        , {'5', '.', '.', '.', '.', '.', '.', '9', '.'}
+                        , {'.', '.', '.', '5', '6', '.', '.', '.', '.'}
+                        , {'4', '.', '3', '.', '.', '.', '.', '.', '1'}
+                        , {'.', '.', '.', '7', '.', '.', '.', '.', '.'}
+                        , {'.', '.', '.', '5', '.', '.', '.', '.', '.'}
+                        , {'.', '.', '.', '.', '.', '.', '.', '.', '.'}
+                        , {'.', '.', '.', '.', '.', '.', '.', '.', '.'}}));
+        System.out.println(3 / 3);
     }
 
 }
