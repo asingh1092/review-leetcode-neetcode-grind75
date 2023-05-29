@@ -1,6 +1,4 @@
-package com.singh.random;
-
-import java.util.HashMap;
+package com.singh.random.hashing;
 
 public class IntegerToRoman {
     public String intToRoman(int num) {

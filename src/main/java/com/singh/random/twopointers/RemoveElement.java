@@ -1,4 +1,4 @@
-package com.singh.random;
+package com.singh.random.twopointers;
 
 public class RemoveElement {
     /*
