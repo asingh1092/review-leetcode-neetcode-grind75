@@ -47,7 +47,7 @@ public class SameTree {
         if (p == null || q == null) return false;
         // if return vals of p and q are different, then they are not the same tree
         if (p.val != q.val) return false;
-        // recursively check the left and right subtrees of p and q
+        // recursively check the lef+t and right subtrees of p and q
         // if both the left and right subtrees are the same , then p and q are the same tree
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
