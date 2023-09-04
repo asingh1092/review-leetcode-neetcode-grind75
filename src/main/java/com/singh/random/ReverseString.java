@@ -1,5 +1,6 @@
 package com.singh.random;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class ReverseString {
@@ -27,7 +28,19 @@ public class ReverseString {
         return sb.toString();
     }
 
+    public static String reverseString2(String s) {
+        char[] ret = new char[s.length()];
+        char[] sArray = s.toCharArray();
+        int pointer = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            ret[pointer] = sArray[i];
+            pointer++;
+        }
+        return Arrays.toString(ret);
+    }
+
     public static void main(String[] args) {
         System.out.println(reverseString("reverse"));
+        System.out.println(reverseString2("reverse"));
     }
 }
