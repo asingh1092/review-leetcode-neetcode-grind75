@@ -1,4 +1,4 @@
-package com.singh.random;
+package com.singh.google.foundations;
 
 public class StringSplosion {
 

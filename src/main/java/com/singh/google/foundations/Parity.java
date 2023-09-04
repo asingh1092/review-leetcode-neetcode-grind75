@@ -1,4 +1,4 @@
-package com.singh.random;
+package com.singh.google.foundations;
 
 import java.util.Arrays;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.singh.random;
+package com.singh.google.foundations;
 
 import java.util.ArrayList;
 import java.util.List;
