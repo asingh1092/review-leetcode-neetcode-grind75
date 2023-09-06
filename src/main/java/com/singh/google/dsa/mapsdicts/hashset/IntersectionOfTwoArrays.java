@@ -1,4 +1,4 @@
-package com.singh.google.dsa.mapsdicts;
+package com.singh.google.dsa.mapsdicts.hashset;
 
 import java.util.*;
 
