@@ -19,15 +19,14 @@ public class GroupAnagrams {
             }
             String key = String.valueOf(ca);
 
+            List<String> list;
             if (map.containsKey(key)) {
-                List<String> list = map.get(key);
-                list.add(word);
-                map.put(key, list);
+                list = map.get(key);
             } else {
-                List<String> list = new ArrayList<>();
-                list.add(word);
-                map.put(key, list);
+                list = new ArrayList<>();
             }
+            list.add(word);
+            map.put(key, list);
         }
         return new ArrayList<>(map.values());
     }
