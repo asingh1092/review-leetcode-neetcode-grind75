@@ -1,4 +1,4 @@
-package com.singh.google.dsa;
+package com.singh.google.dsa.mapsdicts.hashmap;
 
 import java.util.ArrayList;
 import java.util.HashMap;
