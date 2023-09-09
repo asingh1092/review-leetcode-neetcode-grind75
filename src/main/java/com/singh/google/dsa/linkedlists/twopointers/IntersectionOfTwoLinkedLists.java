@@ -1,4 +1,6 @@
-package com.singh.google.dsa.linkedlists;
+package com.singh.google.dsa.linkedlists.twopointers;
+
+import com.singh.google.dsa.linkedlists.ListNode;
 
 public class IntersectionOfTwoLinkedLists {
 

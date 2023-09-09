@@ -1,4 +1,4 @@
-package com.singh.google.dsa.linkedlists;
+package com.singh.google.dsa.linkedlists.twopointers;
 
 class Node {
     public int val;
