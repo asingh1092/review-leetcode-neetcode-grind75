@@ -16,7 +16,7 @@ public class ReverseList {
         while (pointer.next != null ) {
             ListNode newHead = pointer.next;
             pointer.next = newHead.next;
-            newHead.next = head;1
+            newHead.next = head;
             head = newHead;
             pointer = pointer.next;
         }
