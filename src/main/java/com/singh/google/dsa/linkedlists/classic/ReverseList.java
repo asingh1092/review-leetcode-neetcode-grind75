@@ -4,8 +4,6 @@ import com.singh.google.dsa.linkedlists.ListNode;
 
 public class ReverseList {
 
-    // TODO: FINISH
-
     /*
          1 <- 2 <- 3    4 -> 5
                         h    n
