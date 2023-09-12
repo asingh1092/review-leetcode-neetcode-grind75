@@ -7,20 +7,21 @@ public class ReverseList {
     // TODO: FINISH
 
     /*
-        1 -> 2 -> 3 -> 4 -> 5
-        ^    ^
+         1 <- 2 <- 3    4 -> 5
+                        h    n
+                   p
+
         2 -> 1 -> 3 -> 4- -> 5
      */
     public static ListNode reverse(ListNode head) {
-        ListNode pointer = head;
-        while (pointer.next != null ) {
-            ListNode newHead = pointer.next;
-            pointer.next = newHead.next;
-            newHead.next = head;
-            head = newHead;
-            pointer = pointer.next;
+        ListNode newHead = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = next;
         }
-        return head;
+        return newHead;
     }
 
     public static void main(String[] args) {
