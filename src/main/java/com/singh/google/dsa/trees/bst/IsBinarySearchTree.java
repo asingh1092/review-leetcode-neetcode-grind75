@@ -1,4 +1,6 @@
-package com.singh.google.dsa.trees;
+package com.singh.google.dsa.trees.bst;
+
+import com.singh.google.dsa.trees.BinaryTreeNode;
 
 public class IsBinarySearchTree {
 

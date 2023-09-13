@@ -4,7 +4,7 @@ import com.singh.testing.binarytree.TreeNode;
 
 public class BinaryTreeNode {
 
-    int val;
+    public int val;
     public BinaryTreeNode left;
     public BinaryTreeNode right;
 
