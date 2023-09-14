@@ -21,6 +21,8 @@ public class DiameterOfBinaryTree {
           2
           longest = 1
 
+          // post order dfs
+
      */
 
     int diameter = 0;

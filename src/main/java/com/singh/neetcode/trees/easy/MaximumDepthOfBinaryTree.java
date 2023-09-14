@@ -17,6 +17,7 @@ public class MaximumDepthOfBinaryTree {
 
     */
 
+    // post order dfs
     public int maxDepth(TreeNode root) {
         if(root == null) {
             return 0;

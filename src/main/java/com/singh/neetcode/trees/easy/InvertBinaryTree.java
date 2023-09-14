@@ -19,6 +19,7 @@ public class InvertBinaryTree {
         return root;
     }
 
+    // post order dfs
     public BinaryTreeNode invertTreePOSTORDER(BinaryTreeNode root) {
         if (root != null) {
             // do something to left
