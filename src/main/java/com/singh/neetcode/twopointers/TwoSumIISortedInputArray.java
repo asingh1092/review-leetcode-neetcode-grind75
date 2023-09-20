@@ -1,8 +1,6 @@
 package com.singh.neetcode.twopointers;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class TwoSumIISortedInputArray {
 
@@ -25,26 +23,8 @@ public class TwoSumIISortedInputArray {
 
      */
 
-    public int[] twoSum(int[] numbers, int target) {
-        int size = numbers.length;
-        if (size == 2) {
-            return new int[]{1, 2};
-        }
-        int first = 0;
-        while (first < size - 1) {
-            int second = Arrays.binarySearch(numbers, target - numbers[first]);
-            if (second > -1) {
-                return new int[]{first + 1, second + 1};
-            } else {
-                first++;
-            }
-        }
-        return new int[]{0, 0};
-    }
-
-
     // leverage the numbers being sorted
-    public int[] twoSumCorrect(int[] numbers, int target) {
+    public int[] twoSum(int[] numbers, int target) {
         int[] ret = new int[2];
         int first = 0;
         int second = numbers.length - 1;
@@ -68,9 +48,9 @@ public class TwoSumIISortedInputArray {
 
     public static void main(String[] args) {
         TwoSumIISortedInputArray twoSum = new TwoSumIISortedInputArray();
-        System.out.println(Arrays.toString(twoSum.twoSumCorrect(new int[]{2, 7, 11, 15}, 9)));
-        System.out.println(Arrays.toString(twoSum.twoSumCorrect(new int[]{2,3,4}, 6)));
-        System.out.println(Arrays.toString(twoSum.twoSumCorrect(new int[]{-1, 0}, -1)));
+        System.out.println(Arrays.toString(twoSum.twoSum(new int[]{2, 7, 11, 15}, 9)));
+        System.out.println(Arrays.toString(twoSum.twoSum(new int[]{2,3,4}, 6)));
+        System.out.println(Arrays.toString(twoSum.twoSum(new int[]{-1, 0}, -1)));
 
     }
 }
