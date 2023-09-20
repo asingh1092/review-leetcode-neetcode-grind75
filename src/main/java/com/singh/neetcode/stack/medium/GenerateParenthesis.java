@@ -27,31 +27,29 @@ public class GenerateParenthesis {
             (        ) (     )  ()      ()()      () ()     ()   ()  ()  ()   (  )     (  ) ( ) (  )    ( )
 
      */
-    public List<String> generateParens(int n) {
+
+    public static List<String> generateParenthesis(int n) {
         List<String> ret = new ArrayList<>();
-        if (n <= 0) {
-            return ret;
-        } else {
-            helper(n, 0, "", ret);
-        }
+        backtrack(n, 0, ret, "");
         return ret;
     }
 
-    public void helper(int left, int right, String res, List<String> ret) {
+    private static void backtrack(int left, int right, List<String> ret, String formed) {
         if (left == 0 && right == 0) {
-            ret.add(res);
+            ret.add(formed);
         }
+
         if (left > 0) {
-            helper(left - 1, right + 1,  res + "(", ret);
+            backtrack(left - 1, right + 1, ret, formed + "(");
         }
+
         if (right > 0) {
-            helper(left, right - 1, res + ")", ret);
+            backtrack(left,right - 1, ret,formed + ")");
         }
     }
 
     public static void main(String[] args) {
-        GenerateParenthesis generateParenthesis = new GenerateParenthesis();
-        System.out.println(generateParenthesis.generateParens(5));
+        System.out.println(generateParenthesis(4));
     }
 
 }
