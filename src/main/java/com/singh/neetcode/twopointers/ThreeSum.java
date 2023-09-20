@@ -23,27 +23,27 @@ public class ThreeSum {
         Use a set + two pointers
      */
     public List<List<Integer>> threeSum(int[] nums) {
-        Set<List<Integer>> ret = new HashSet<>();
-        if (nums.length < 3) {
-            return Collections.emptyList();
-        }
-        // sort nums -> O(nlogn)
+        int target = 0;
+        Set<List<Integer>> hSet = new HashSet<>();
         Arrays.sort(nums);
-        for (int i = 0; i < nums.length - 2; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int j = i + 1;
             int k = nums.length - 1;
-            while (j < k) {
+            while (j < k){
                 int sum = nums[i] + nums[j] + nums[k];
-                if (sum == 0) {
-                    ret.add(Arrays.asList(nums[i], nums[j++], nums[k--]));
-                } else if (sum > 0) {
+                if (sum == target) {
+                    hSet.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    j++;
                     k--;
-                } else if (sum < 0) {
+                } else if (sum > target) {
+                    k--;
+                } else {
                     j++;
                 }
             }
+
         }
-        return new ArrayList<>(ret);
+        return new ArrayList<>(hSet);
     }
 
     public static void main(String[] args) {
