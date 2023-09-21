@@ -5,18 +5,16 @@ import java.util.EmptyStackException;
 public class MinStack {
 
     MinNode head = null;
-    int min;
-
     public MinStack() {
     }
 
 
     public void push(int val) {
         if (head != null) {
-            int min = Math.min(head.val, val);
+            int min = Math.min(head.min, val);
             head = new MinNode(val, min, head);
         } else {
-            head = new MinNode(val, min, null);
+            head = new MinNode(val, val, null);
         }
     }
 
