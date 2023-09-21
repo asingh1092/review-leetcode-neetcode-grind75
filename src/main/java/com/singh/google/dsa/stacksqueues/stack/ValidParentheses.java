@@ -1,4 +1,4 @@
-package com.singh.google.dsa.stacksqueues;
+package com.singh.google.dsa.stacksqueues.stack;
 
 import java.util.HashMap;
 import java.util.Map;
