@@ -1,7 +1,6 @@
 package com.singh.neetcode.backtracking;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Subsets {
 
@@ -24,11 +23,23 @@ public class Subsets {
       // TODO: Backtracking - https://leetcode.com/problems/subsets/solutions/27281/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning/
      */
 
-//    public List<List<Integer>> subsets(List<Integer> nums) {
-//        List<List<Integer>> ret = new ArrayList<>();
-//    }
-//
-//    public List<Integer> dfs(List<List<Integer>> ret, List<Integer> nums) {
-//
-//    }
+    public List<List<Integer>> subsets(List<Integer> nums) {
+        List<List<Integer>> ret = new ArrayList<>();
+        backtrack(nums, ret, new ArrayList<>(), 0);
+        return ret;
+    }
+
+    public void backtrack(List<Integer> nums, List<List<Integer>> ret, List<Integer> potential, int pos) {
+        ret.add(new ArrayList<>(potential));
+        for(int i = pos; i < nums.size(); i++){
+            potential.add(nums.get(i));
+            backtrack(nums, ret, potential, i + 1);
+            potential.remove(potential.size() - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        Subsets subsets = new Subsets();
+        System.out.println(subsets.subsets(List.of(1, 2, 3)));
+    }
 }
