@@ -12,18 +12,31 @@ public class SameTree {
         POST ORDER: left, right, root
 
         preOrder traversal -> check root/parent of both to see if they are same, then go down left of both, then right
+
+           1. check if roots are same
+           2. check if left is same
+           3. check if right is same
+           4. recurse
+           5. base == check if both roots are null & both vals are the same && if either or are null
+
+                1                     1
+            2       3            2        3
+         4                    4
      */
 
     public static boolean isSameTree(BinaryTreeNode p, BinaryTreeNode q) {
-        if(p == null && q == null) {
+        if (p == null && q == null) {
             return true;
         }
-        if(p == null || q == null) {
+        if (p == null || q == null) {
             return false;
         }
-        if(p.val == q.val)
+        if (p.val == q.val) {
             return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-        return false;
+        } else {
+            return false;
+
+        }
     }
 
     public static void main(String[] args) {
