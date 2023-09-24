@@ -2,6 +2,13 @@ package com.singh.neetcode.dp;
 
 public class Fibonacci {
 
+    public int fibonacciRecursive(int n) {
+        if (n < 2) {
+            return n;
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+    }
+
     public int fibonacciTopDown(int n) {
         int[] memo = new int[n + 1];
         return topDownFib(n, memo);
@@ -29,6 +36,8 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
+        System.out.println(new Fibonacci().fibonacciRecursive(10));
+        System.out.println(new Fibonacci().fibonacciRecursive(3));
         System.out.println(new Fibonacci().fibonacciTopDown(10));
         System.out.println(new Fibonacci().fibonacciTopDown(3));
         System.out.println(new Fibonacci().fibonacciBottomUp(10));
