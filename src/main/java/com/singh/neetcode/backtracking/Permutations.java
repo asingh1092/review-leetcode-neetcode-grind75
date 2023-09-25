@@ -13,11 +13,11 @@ public class Permutations {
 
     public void backtrack(int[] nums, List<List<Integer>> ret, List<Integer> potential) {
         if (potential.size() == nums.length) {
-            ret.add(new ArrayList<>(potential));
+            ret.add(new ArrayList<>(potential)); // we add a copy of potentials here because we're still using potential for additional permutations
         } else {
             for (int num : nums) {
                 if (potential.contains(num)) {
-                    continue;
+                    continue; // if we've already got this number, continue to the next num in nums
                 }
                 potential.add(num);
                 backtrack(nums, ret, potential);

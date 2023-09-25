@@ -22,14 +22,14 @@ public class CombinationSum {
         return ret;
     }
 
-    private void backtrack(int[] candidates, List<List<Integer>> ret, int target, int sum, ArrayList<Integer> potential, int start) {
+    private void backtrack(int[] candidates, List<List<Integer>> ret, int target, int sum, ArrayList<Integer> potential, int pos) {
         if (sum == target) {
-            ret.add(new ArrayList<>(potential));
+            ret.add(new ArrayList<>(potential)); // we add a copy of potentials here because we're still using potential for additional combos
         } else if (sum > target) {
             return;
         } else {
 
-            for (int i = start; i < candidates.length; i++) {
+            for (int i = pos; i < candidates.length; i++) {
                 potential.add(candidates[i]);
                 backtrack(candidates, ret, target, sum + candidates[i], potential, i); // i here is not i + 1 because we can use the same number over again
                 potential.remove(potential.size() - 1);
