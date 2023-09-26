@@ -63,7 +63,7 @@ public class ClimbingStairs {
         memo[0] = 0;
         memo[1] = 1;
         memo[2] = 2;
-        for (int i = 3; i < n; i++) {
+        for (int i = 3; i < n + 1; i++) {
             memo[i] = memo[i - 1] + memo[i -2];
         }
         return memo[n];
@@ -79,5 +79,9 @@ public class ClimbingStairs {
         System.out.println(c.climbStairsTopDown(3));
         System.out.println(c.climbStairsTopDown(4));
         System.out.println(c.climbStairsTopDown(5));
+        System.out.println(c.climbingStairsBottomUp(2));
+        System.out.println(c.climbingStairsBottomUp(3));
+        System.out.println(c.climbingStairsBottomUp(4));
+        System.out.println(c.climbingStairsBottomUp(5));
     }
 }
