@@ -32,18 +32,38 @@ public class ClimbingStairs {
                  stiars(n) = stairs(n-1) + stairs(n-2)
      */
 
-    public int climbStairs(int n) {
+    public int climbStairsRecursive(int n) {
         if (n < 3) {
             return n;
         }
-        return climbStairs(n - 1) + climbStairs(n - 2);
+        return climbStairsRecursive(n - 1) + climbStairsRecursive(n - 2);
+    }
+
+    public int climbStairsTopDown(int n) {
+        int[] memo = new int[n + 1];
+        return dp(n, memo);
+    }
+
+    private int dp(int n, int[] memo) {
+        if (n < 3) {
+            return n;
+        }
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+        memo[n] = dp(n - 1, memo) + dp(n - 2, memo);
+        return memo[n];
     }
 
     public static void main(String[] args) {
         ClimbingStairs c = new ClimbingStairs();
-        System.out.println(c.climbStairs(2));
-        System.out.println(c.climbStairs(3));
-        System.out.println(c.climbStairs(4));
-        System.out.println(c.climbStairs(5));
+        System.out.println(c.climbStairsRecursive(2));
+        System.out.println(c.climbStairsRecursive(3));
+        System.out.println(c.climbStairsRecursive(4));
+        System.out.println(c.climbStairsRecursive(5));
+        System.out.println(c.climbStairsTopDown(2));
+        System.out.println(c.climbStairsTopDown(3));
+        System.out.println(c.climbStairsTopDown(4));
+        System.out.println(c.climbStairsTopDown(5));
     }
 }
