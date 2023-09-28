@@ -2,18 +2,18 @@ package com.singh.neetcode.trie;
 
 public class Trie {
 
-    public TrieNode root;
+    public DictTrieNode root;
 
     public Trie() {
-        root = new TrieNode();
+        root = new DictTrieNode();
     }
 
     public void insert(String word) {
-       TrieNode t = root;
+       DictTrieNode t = root;
        for (int i = 0; i < word.length(); i++) {
            char c = word.charAt(i);
            if (t.children[c - 'a'] == null) {
-               t.children[c - 'a'] = new TrieNode();
+               t.children[c - 'a'] = new DictTrieNode();
            }
            t = t.children[c - 'a'];
        }
@@ -21,7 +21,7 @@ public class Trie {
     }
 
     public boolean search(String word) {
-        TrieNode t = root;
+        DictTrieNode t = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             if (t.children[c - 'a'] == null) {
@@ -33,7 +33,7 @@ public class Trie {
     }
 
     public boolean startsWith(String prefix) {
-        TrieNode t = root;
+        DictTrieNode t = root;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
             if (t.children[c - 'a'] == null) {
@@ -58,7 +58,7 @@ public class Trie {
 class TrieNode {
 
     public boolean isWord;
-    public TrieNode[] children = new TrieNode[26];
+    public DictTrieNode[] children = new DictTrieNode[26];
 
     public TrieNode() {
     }
