@@ -1,7 +1,6 @@
-package com.singh.google.dsa.stacksqueues;
+package com.singh.google.dsa.stacksqueues.bfsqueue;
 
 import java.util.ArrayDeque;
-import java.util.Arrays;
 import java.util.Queue;
 
 public class WallsAndGates {

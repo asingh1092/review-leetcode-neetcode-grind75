@@ -14,8 +14,9 @@ public class BalancedBinaryTree {
             return 0;
         int leftHeight = maxDepth(root.left);
         int rightHeight = maxDepth(root.right);
-        if (Math.abs(leftHeight - rightHeight) > 1)
+        if (Math.abs(leftHeight - rightHeight) > 1) {
             result = false;
+        }
         return 1 + Math.max(leftHeight, rightHeight);
     }
 }

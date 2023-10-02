@@ -18,20 +18,29 @@ public class DailyTemperatures {
                                                               Space: O(1)
 
           // TODO - use a monotonic stack
+
+         [73, 74, 75, 71, 72, 76, 73]
+          ^
+         [0,   0,   0  0,  0,  0,  0]
+         [1]
+
+         [73] -> [0]
+         [72,73] -> [1, 0]
+         [73,72] -> [0,0]
      */
 
     public int[] dailyTemperatures(int[] temperatures) {
         int size = temperatures.length;
-        int[] ret = new int[size];
+        int[] answer = new int[size];
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < size; i++) {
             while (!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
                 int idx = stack.pop();
-                ret[idx] = i - idx;
+                answer[idx] = i - idx;
             }
             stack.push(i);
         }
-        return ret;
+        return answer;
     }
 
     public static void main(String[] args) {

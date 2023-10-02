@@ -66,8 +66,8 @@ public class ProductExceptSelf {
      */
     public int[] productExceptSelfPrefixSuffix(int[] nums) {
         int n = nums.length;
-        int pre[] = new int[n];
-        int suff[] = new int[n];
+        int[] pre = new int[n];
+        int[] suff = new int[n];
         pre[0] = 1;
         suff[n - 1] = 1;
 

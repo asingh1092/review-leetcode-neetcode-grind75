@@ -74,10 +74,6 @@ public class TopKFrequentElements {
         return ret;
     }
 
-
-    // TODO Solution with bucket sort
-
-
     public static void main(String[] args) {
         System.out.println(Arrays.toString(KthFrequentElements(new int[]{1, 1, 1, 2, 2, 3}, 2)));
         System.out.println(Arrays.toString(KthFrequentElements(new int[]{}, 1)));

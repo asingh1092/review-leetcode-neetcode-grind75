@@ -1,4 +1,4 @@
-package com.singh.google.dsa.stacksqueues;
+package com.singh.google.dsa.stacksqueues.queue;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
