@@ -34,6 +34,6 @@ public class GroupAnagrams {
     public static void main(String[] args) {
         String[] strs = {"eat", "tea", "tan","ate", "nat", "bat"};
         String[] strs2 = {"cab","tin","pew","duh","may","ill","buy","bar","max","doc"};
-        System.out.println(anagrams(strs2));
+        System.out.println(anagrams(strs));
     }
 }
