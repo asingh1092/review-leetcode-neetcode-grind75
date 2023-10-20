@@ -3,7 +3,7 @@ package com.singh.grind;
 import java.util.Objects;
 import java.util.Stack;
 
-public class Polish {
+public class EvaluateReversePolishNotation {
 
     public int evalRPN(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
@@ -29,7 +29,7 @@ public class Polish {
 
     public static void main(String[] args) {
         String[] tokens = {"2","1","+","3","*"};
-        Polish polish = new Polish();
+        EvaluateReversePolishNotation polish = new EvaluateReversePolishNotation();
         System.out.println(polish.evalRPN(tokens));
         tokens = new String[]{"4", "13", "5", "/", "+"};
         System.out.println(polish.evalRPN(tokens));
