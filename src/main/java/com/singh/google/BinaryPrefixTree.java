@@ -1,4 +1,4 @@
-package com.singh;
+package com.singh.google;
 
 import java.util.*;
 
