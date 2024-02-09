@@ -1,38 +1,29 @@
-package com.singh.grind75.week1;
+package com.singh.grind.week1;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Queue;
 import java.util.Stack;
 
 public class ValidParentheses {
-    /*
 
-
-     */
-
-    public boolean isValid(String s) {
+    public static boolean isValid(String s) {
         Map<Character, Character> map = new HashMap<>();
-        map.put(')', '(');
-        map.put(']', '[');
-        map.put('}', '{');
         Stack<Character> stack = new Stack<>();
-        char[] sArray = s.toCharArray();
-        for (char c : sArray) {
-            if (c == '(' || c == '[' || c =='{') {
+        map.put('}', '{');
+        map.put(']', '[');
+        map.put(')', '(');
+        for (char c : s.toCharArray()) {
+            if (c == '{' || c == '(' || c == '[') {
                 stack.push(c);
             } else {
-                if (stack.isEmpty()) {
+                if (stack.empty()) {
                     return false;
                 }
-                else if (map.get(c) != stack.peek()) {
+                if (map.get(c) != stack.pop()) {
                     return false;
-                } else {
-                    stack.pop();
                 }
             }
         }
-
-        return stack.isEmpty();
+        return stack.empty();
     }
 }
