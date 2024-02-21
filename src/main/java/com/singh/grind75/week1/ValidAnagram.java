@@ -1,4 +1,4 @@
-package com.singh.grind.week1;
+package com.singh.grind75.week1;
 
 public class ValidAnagram {
     public static boolean isAnagram(String s, String t) {
