@@ -1,24 +1,19 @@
 package com.singh.grind75.week1;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
-
-    public static int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> seen = new HashMap<>();
-        // key == num, value = position
-        for (int i = 0; i < nums.length; i++) {
-            int toFind = target - nums[i];
-            if (seen.containsKey(toFind)) {
-                return new int[]{i, seen.get(toFind)};
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int pointer = 0; pointer < nums.length; pointer++) {
+            int val = target - nums[pointer];
+            if (map.containsKey(val)) {
+                return new int[]{pointer, map.get(val)};
             } else {
-                seen.put(nums[i], i);
+                map.put(nums[pointer], pointer);
             }
         }
         return new int[]{};
-    }
-
-    public static void main(String[] args) {
-        System.out.println(twoSum(new int[]{2, 7, 5, 2, 3}, 9));
     }
 }
