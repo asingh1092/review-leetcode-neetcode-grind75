@@ -1,6 +1,6 @@
 package com.singh.old.neetcode.trees.medium;
 
-import com.singh.google.dsa.trees.BinaryTreeNode;
+import com.singh.old.google.dsa.trees.BinaryTreeNode;
 import com.singh.testing.binarytree.TreeNode;
 
 import java.util.ArrayDeque;

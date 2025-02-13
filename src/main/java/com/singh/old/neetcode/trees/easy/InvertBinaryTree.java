@@ -1,6 +1,6 @@
 package com.singh.old.neetcode.trees.easy;
 
-import com.singh.google.dsa.trees.BinaryTreeNode;
+import com.singh.old.google.dsa.trees.BinaryTreeNode;
 
 public class InvertBinaryTree {
 
