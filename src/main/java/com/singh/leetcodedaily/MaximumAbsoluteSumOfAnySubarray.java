@@ -3,6 +3,8 @@ package com.singh.leetcodedaily;
 public class MaximumAbsoluteSumOfAnySubarray {
 
     /*
+        https://leetcode.com/problems/maximum-absolute-sum-of-any-subarray/description/
+
         Given an integer array nums, find the max abs sum of any subarray of nums
         e.g.
         nums = [1,-3,2,3,-4] -> [2,3] as abs(2+3) = 5
